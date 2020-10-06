@@ -4,7 +4,7 @@ import * as recipePuppyApi from '../api/recipePuppy'
 import { isLeft, isRight } from 'fp-ts/lib/Either'
 import { validateIngredient } from '../utils/ingredient'
 
-export async function getRecipes(req: Request, res: Response) {
+export async function getRecipes(req: Request, res: Response): Promise<Response<any>> {
 	const {i} = req.query
 
 	if (!i) {
@@ -29,8 +29,8 @@ export async function getRecipes(req: Request, res: Response) {
 				gif
 			}
 		}))
-		res.status(200).json({ keywords, recipes })
+		return res.status(200).json({ keywords, recipes })
 	} else {
-		res.status(400).json({ error: data.left })
+		return res.status(400).json({ error: data.left })
 	}
 }

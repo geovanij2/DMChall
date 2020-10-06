@@ -3,7 +3,7 @@ import { setupExpress } from './setup/express'
 import * as http from 'http'
 
 
-export async function main() {
+export async function main(): Promise<http.Server> {
 	const app = await setupExpress()
 	const server = http.createServer(app)
 	server.listen(config.PORT, () => {

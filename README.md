@@ -3,7 +3,8 @@ Delivery much challenge
 
 ## Como rodar
 
-No arquivo .env.example estão definidas todas as variáveis de ambiente necessárias para que o projeto rode.
+No arquivo .env.example estão definidas todas as variáveis de ambiente necessárias para que o projeto rode. Você deve criar um arquivo chamado .env na raiz do projeto, copiar o .env.example para ele e preencher as variáveis.
+
 NODE_ENV seria a variável que define o tipo de ambiente da aplicação (exemplo: development e prodution).
 Dependendo do tipo escolhido podem acontecer coisas diferentes no código como a criação de tabelas num banco de dados por exemplo.
 
@@ -19,3 +20,11 @@ Estar no diretório do projeto
 `docker build -t dmchall . `
 
 `docker run --name dmchall_container -p 8080:8080 dmchall`
+
+Caso queira rodar na sua própria máquina basta usar o comando:
+
+`yarn start`
+
+ou
+
+`npm start`

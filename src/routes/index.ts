@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
-import * as hello from './hello'
+import * as recipeRouter from './recipe'
 const { Router } = require('express')
 
 function errorHandler(err: any, req: Request, res: Response, next: NextFunction) {
@@ -9,7 +9,7 @@ function errorHandler(err: any, req: Request, res: Response, next: NextFunction)
 
 const router = Router()
 
-hello.register(router)
+recipeRouter.register(router)
 
 router.use(errorHandler)
 
